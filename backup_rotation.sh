@@ -11,7 +11,7 @@ bkupBashSC
 
   Create_bkup() { 
 
-    tar -czvf /home/BashBlaze-7-Days-of-Bash-Scripting-Challenge/mychallnges/day2/Bk/backup_$(date +%Y-%m-%d-%H-%M-%S).tar.gz $a
+    tar -czvf backup_destination_path/backup_$(date +%Y-%m-%d-%H-%M-%S).tar.gz $a
 
     echo "Backup completed successfully."
    
@@ -22,13 +22,13 @@ bkupBashSC
 
   Delete_old_bkups() {
 
-	 num_bkups=$(find "/home/BashBlaze-7-Days-of-Bash-Scripting-Challenge/mychallnges/day2/Bk/" -maxdepth 1 -type f -name "backup_*.tar.gz" | wc -l)
+	 num_bkups=$(find "backup_destination_path/" -maxdepth 1 -type f -name "backup_*.tar.gz" | wc -l)
 	 
 	 if [ "$num_bkups" -gt "$max_bkups" ]; then
 
-  oldest_backup=$(ls -t "/home/BashBlaze-7-Days-of-Bash-Scripting-Challenge/mychallnges/day2/Bk/" | grep '^backup_.*\.tar\.gz$' | tail -n 1)
+	oldest_backup=$(ls -t "backup_destination_path" | grep '^backup_.*\.tar\.gz$' | tail -n 1)
 
-  rm -f "/home/BashBlaze-7-Days-of-Bash-Scripting-Challenge/mychallnges/day2/Bk/$oldest_backup"
+  rm -f "backup_destination_path$oldest_backup"
   
        echo "Deleted oldest backups: $oldest_backup"
        
