@@ -1,9 +1,10 @@
 #!/bin/bash
-<< bkupBashSC
+<< Bkup_BashShellScripts
 This Shell scripts show the backup details..
-bkupBashSC
+Bkup_BashShellScripts
 
-  echo "Pls enter the location of data to backup"
+  echo "Please enter the location of data to backup"
+ 
   read a #Source of data to backup
   
   #Maximum backup data
@@ -36,8 +37,8 @@ bkupBashSC
     }
 
 
-
   # Main Script
   Create_bkup
   Delete_old_bkups
+
 
