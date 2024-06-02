@@ -29,7 +29,7 @@ Bkup_BashShellScripts
 
 	oldest_backup=$(ls -t "backup_destination_path" | grep '^backup_.*\.tar\.gz$' | tail -n 1)
 
-  rm -f "backup_destination_path$oldest_backup"
+  rm -f "backup_destination_path/$oldest_backup"
   
        echo "Deleted oldest backups: $oldest_backup"
        
